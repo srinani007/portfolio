@@ -8,46 +8,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="sticky-header">
-        <a href="#main" class="skip-link">Skip to main content</a>
-        <nav aria-label="Main Navigation" >
-            <div class="nav-container">
-                <a href="/" class="brand">
+    <header>
+        <nav>
+            <div class="logo-container">
                 <img src="logo.jpg" alt="Logo" class="logo-image">
                 <span class="logo-text">Prasanth Kunchanapalli</span>
-                </a>
             </div>
-            <button class="hamburger" aria-expanded="false" aria-label="Menu">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-
-            <div class="nav-overlay"></div>
-            <ul class="nav-menu" role="list">
-                <li><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
-                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
-                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
-                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
-                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
-                <li><a href="#achievements" class="nav-link" data-text="Achievements">Achievements</a></li>
-                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero" style="background-image: url('hero-bg.jpg');">
-        <div class="hero-content" style="text-align: center;">
-            <h1>Hello, I'm Prasanth Kunchanapalli</h1>
+        <div class="hero-content">
+            <h1>Hello, I'm Venkat Sai Prasanth</h1>
             <p class="animated-text">Software Development Engineer | AI & Cloud Expert</p>
             <a href="#contact" class="cta-btn">Get in Touch</a>
             <a href="Venkat_Sai_Prasanth_Resume.pdf" download class="cta-btn secondary">Download Resume</a>
         </div>
-        <div class="hero-image" style="text-align: center;">
+        <div class="hero-image">
             <img src="avatar.jpg" alt="Avatar of Venkat Sai Prasanth">
         </div>
-        <div class="scroll-indicator" style="text-align: center;">
-            <p class="fade-in-text" style="animation-delay: 0.5s;">Scroll Down to Explore</p>
+        <div class="scroll-indicator">
+            <p>Scroll Down</p>
             <div class="scroll-icon"></div>
         </div>
     </section>
@@ -60,7 +56,8 @@
 
     <section id="skills" class="section" style="background-image: url('skills-bg.jpg');">
         <h2>Skills</h2>
-        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+        <div class="skills-grid" id="skills-grid">
+            <!-- Skills will be populated dynamically if using backend, otherwise static -->
             <div class="skill-card">Java 17</div>
             <div class="skill-card">Spring Boot</div>
             <div class="skill-card">ReactJS</div>
@@ -78,23 +75,18 @@
 
     <section id="experience" class="section" style="background-image: url('experience-bg.jpg');">
         <h2>Experience</h2>
-        <div class="timeline" style="display: flex; flex-direction: column; gap: 20px;">
-            <div class="timeline-item" style="background: rgba(51, 41, 228, 0.8); padding: 20px; border-radius: 10px;">
-                <h3>Trine University - Graduate Research Assistant</h3>
-                <p>Aug 2023 – Present</p>
-                <p>Developing a real-time data processing system using Kafka and Spark, enhancing data throughput by 50%.</p>
-            </div>
-            <div class="timeline-item" style="background: rgba(51, 41, 228, 0.8); padding: 20px; border-radius: 10px;">
+        <div class="timeline">
+            <div class="timeline-item slide-in" style="animation-delay: 0.2s;">
                 <h3>University of Dayton - TA & AI Engineer</h3>
                 <p>Jul 2023 – Aug 2023</p>
                 <p>Developed AI-based document processing systems using GCP’s Document AI and Google Vision API, improving accuracy by 30%.</p>
             </div>
-            <div class="timeline-item" style="background: rgba(51, 41, 228, 0.8); padding: 20px; border-radius: 10px;">
+            <div class="timeline-item slide-in" style="animation-delay: 0.4s;">
                 <h3>Mphasis Technologies - Software Engineer</h3>
                 <p>Jul 2022 – Mar 2023</p>
                 <p>Migrated banking systems to microservices with Spring Boot and AWS, reducing downtime by 30%.</p>
             </div>
-            <div class="timeline-item" style="background: rgba(51, 41, 228, 0.8); padding: 20px; border-radius: 10px;">
+            <div class="timeline-item slide-in" style="animation-delay: 0.6s;">
                 <h3>Swiss Mobi Software Technologies - Software Engineer</h3>
                 <p>Mar 2019 – Jun 2022</p>
                 <p>Built payment processing platforms and SPAs with React.js, improving performance by 20%.</p>
@@ -104,20 +96,16 @@
 
     <section id="projects" class="section" style="background-image: url('projects-bg.jpg');">
         <h2>Projects</h2>
-        <div class="projects-grid" >
+        <div class="projects-grid">
             <div class="project-card">
-                <h3>Real-time Data Processing System</h3>
-                <p>Implemented with Kafka and Spark, enhancing data throughput by 50% for real-time analytics.</p>
-            </div>
-            <div class="project-card" >
                 <h3>AI-Powered Chatbot</h3>
                 <p>Built with Spring Boot and GCP Cloud Functions, integrated with Dialogflow CX for seamless interactions.</p>
             </div>
-            <div class="project-card" >
+            <div class="project-card">
                 <h3>Fraud Detection Microservice</h3>
                 <p>AI-driven system using TensorFlow, Kafka, and Redis for real-time anomaly detection.</p>
             </div>
-            <div class="project-card" >
+            <div class="project-card">
                 <h3>Predictive Analytics for Sales</h3>
                 <p>Developed ML models in Python to forecast sales, optimizing inventory management.</p>
             </div>
