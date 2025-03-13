@@ -49,7 +49,7 @@
 
     <section id="skills" class="section" style="background-image: url('skills-bg.jpg');">
         <h2>Skills</h2>
-        <div class="skills-grid">
+        <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
             <div class="skill-card">Java 17</div>
             <div class="skill-card">Spring Boot</div>
             <div class="skill-card">ReactJS</div>
@@ -67,18 +67,23 @@
 
     <section id="experience" class="section" style="background-image: url('experience-bg.jpg');">
         <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
+        <div class="timeline" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="timeline-item" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
+                <h3>Trine University - Graduate Research Assistant</h3>
+                <p>Aug 2023 – Present</p>
+                <p>Developing a real-time data processing system using Kafka and Spark, enhancing data throughput by 50%.</p>
+            </div>
+            <div class="timeline-item" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
                 <h3>University of Dayton - TA & AI Engineer</h3>
                 <p>Jul 2023 – Aug 2023</p>
                 <p>Developed AI-based document processing systems using GCP’s Document AI and Google Vision API, improving accuracy by 30%.</p>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
                 <h3>Mphasis Technologies - Software Engineer</h3>
                 <p>Jul 2022 – Mar 2023</p>
                 <p>Migrated banking systems to microservices with Spring Boot and AWS, reducing downtime by 30%.</p>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
                 <h3>Swiss Mobi Software Technologies - Software Engineer</h3>
                 <p>Mar 2019 – Jun 2022</p>
                 <p>Built payment processing platforms and SPAs with React.js, improving performance by 20%.</p>
@@ -88,16 +93,20 @@
 
     <section id="projects" class="section" style="background-image: url('projects-bg.jpg');">
         <h2>Projects</h2>
-        <div class="projects-grid">
+        <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
             <div class="project-card">
+                <h3>Real-time Data Processing System</h3>
+                <p>Implemented with Kafka and Spark, enhancing data throughput by 50% for real-time analytics.</p>
+            </div>
+            <div class="project-card" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
                 <h3>AI-Powered Chatbot</h3>
                 <p>Built with Spring Boot and GCP Cloud Functions, integrated with Dialogflow CX for seamless interactions.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
                 <h3>Fraud Detection Microservice</h3>
                 <p>AI-driven system using TensorFlow, Kafka, and Redis for real-time anomaly detection.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card" style="background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
                 <h3>Predictive Analytics for Sales</h3>
                 <p>Developed ML models in Python to forecast sales, optimizing inventory management.</p>
             </div>
