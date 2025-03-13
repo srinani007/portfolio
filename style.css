@@ -156,21 +156,28 @@ h3 { font-size: 24px; }
 }
 
 .animated-text {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: #f4eaea;
-    overflow: hidden;
-    border-right: 3px solid #00ffff;
-    white-space: nowrap;
-    background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
+    font-size: 1.8em;
+    margin-bottom: 20px;
     padding: 0 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    animation: fadeIn 2s ease-in-out, typing 3s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    overflow: hidden;
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: 200%;
+    background-position: 0 50%;
     background-clip: text;
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .cta-btn {
