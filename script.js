@@ -5,6 +5,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+        // Close the mobile menu if open
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+        }
+        // close the menu after clicking on a link on mobile 
+        document.getElementById('mobile-menu').checked = false;
     });
 });
 

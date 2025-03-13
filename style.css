@@ -45,6 +45,42 @@ nav {
     margin: 0 auto;
     padding: 1rem 2rem;
 }
+
+.menu-toggle {
+    display: none; /* Hidden but functional */
+}
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001; /* Above the nav */
+}
+
+.hamburger span {
+    background: #00ffff;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* When menu is open, transform hamburger into an "X" */
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -74,7 +110,22 @@ nav {
 }
 
 .nav-links {
+    list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000; /* Ensure it appears above other content */
     gap: 20px;
     list-style: none;
 }
@@ -458,5 +509,23 @@ footer {
     }
     .timeline-item {
         padding-left: 20px; /* Adjust for smaller screens */
+    }
+    .hamburger {
+        display: flex; /* Show on mobile */
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Below the header */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        max-height: 0; /* Hidden by default */
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 }
