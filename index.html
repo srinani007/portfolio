@@ -8,32 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo-container">
+    <header class="sticky-header">
+        <a href="#main" class="skip-link">Skip to main content</a>
+        <nav aria-label="Main Navigation" >
+            <div class="nav-container">
+                <a href="/" class="brand">
                 <img src="logo.jpg" alt="Logo" class="logo-image">
                 <span class="logo-text">Prasanth Kunchanapalli</span>
+                </a>
             </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div class="nav-links-overlay"></div>
-            <div class="nav-links-close">
-                <span class="close-icon
-                    ">&times;</span>
-            </div>
-            
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="hamburger" aria-expanded="false" aria-label="Menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+
+            <div class="nav-overlay"></div>
+            <ul class="nav-menu" role="list">
+                <li><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#achievements" class="nav-link" data-text="Achievements">Achievements</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
             </ul>
         </nav>
     </header>
