@@ -399,12 +399,30 @@ footer {
     .hero-content {
         max-width: 100%;
     }
+    .hero-content h1 {
+        font-size: 32px; /* Reduced from 48px */
+    }
     .hero-content .animated-text {
-        font-size: 18px;
+        font-size: 16px; /* Reduced from 24px */
+        border-right: none; /* Remove blinking cursor on mobile for simplicity */
+        animation: typing 2.5s steps(30, end) infinite; /* Simplify animation */
+    }
+    hero-content p {
+        font-size: 16px; /* Reduced from 24px */
+    }
+    .cta-btn {
+        display: block; /* Stack buttons vertically */
+        margin: 10px auto; /* Center and add spacing */
+        width: 80%; /* Ensure buttons take reasonable width */
+    }
+    .cta-btn.secondary {
+        padding: 10px 20px;
+        font-size: 14px;
+        border: 2px solid #00ffff;
     }
     .hero-image img {
-        width: 200px;
-        height: 200px;
+        width: 150px; /* Reduced from 200px */
+        height: 150px; /* Reduced from 200px */
         margin-top: 20px;
     }
     .nav-links {
@@ -415,7 +433,12 @@ footer {
         margin: 10px 0;
     }
     .scroll-indicator {
-        font-size: 14px;
+        font-size: 12px;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: fadeIn 2s ease-in-out infinite;
     }
     .scroll-icon {
         width: 15px;
@@ -425,12 +448,15 @@ footer {
         background-attachment: scroll; /* Disable parallax on mobile */
     }
     #about p {
-        font-size: 16px;
+        font-size: 14px;
     }
     #skills {
         background-attachment: scroll; /* Disable parallax on mobile */
     }
     #experience {
         background-attachment: scroll;
+    }
+    .timeline-item {
+        padding-left: 20px; /* Adjust for smaller screens */
     }
 }
