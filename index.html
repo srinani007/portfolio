@@ -1,14 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Venkat Sai Prasanth - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<script src="script.js"></script>
 <body>
-    <h1>Hello, I'm Venkat Sai Prasanth!</h1>
-    <p>Welcome to my portfolio website.</p>
+    <header>
+        <nav>
+            <div class="logo">VSP</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm Venkat Sai Prasanth</h1>
+            <p>Java Full Stack Developer | AI & Cloud Expert</p>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+            <a href="Venkat_Sai_Prasanth_Resume.pdf" download class="cta-btn secondary">Download Resume</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x400?text=AI+Avatar" alt="AI Avatar">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Highly skilled Java Full Stack Developer with over 6+ years of experience in designing and deploying AI-driven solutions and scalable microservices on GCP, AWS, and Azure. Expertise in Java, Python, Spring Boot, React, and AI/ML frameworks like TensorFlow and PyTorch. Passionate about cloud-native development, real-time data processing, and futuristic tech like quantum computing.</p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">Java 17</div>
+            <div class="skill-card">Spring Boot</div>
+            <div class="skill-card">ReactJS</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">TensorFlow</div>
+            <div class="skill-card">AWS</div>
+            <div class="skill-card">GCP</div>
+            <div class="skill-card">Azure</div>
+            <div class="skill-card">Docker</div>
+            <div class="skill-card">Kubernetes</div>
+            <div class="skill-card">Kafka</div>
+            <div class="skill-card">NLP</div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>University of Dayton - TA & AI Engineer</h3>
+                <p>Jul 2023 – Aug 2023</p>
+                <p>Developed AI-based document processing systems using GCP’s Document AI and Google Vision API, improving accuracy by 30%.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Mphasis Technologies - Software Engineer</h3>
+                <p>Jul 2022 – Mar 2023</p>
+                <p>Migrated banking systems to microservices with Spring Boot and AWS, reducing downtime by 30%.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Swiss Mobi Software Technologies - Software Engineer</h3>
+                <p>Mar 2019 – Jun 2022</p>
+                <p>Built payment processing platforms and SPAs with React.js, improving performance by 20%.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>AI-Powered Chatbot</h3>
+                <p>Built with Spring Boot and GCP Cloud Functions, integrated with Dialogflow CX for seamless interactions.</p>
+            </div>
+            <div class="project-card">
+                <h3>Fraud Detection Microservice</h3>
+                <p>AI-driven system using TensorFlow, Kafka, and Redis for real-time anomaly detection.</p>
+            </div>
+            <div class="project-card">
+                <h3>Predictive Analytics for Sales</h3>
+                <p>Developed ML models in Python to forecast sales, optimizing inventory management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Reduced data breach risk by 30% with Zero Trust Architecture.</li>
+            <li>Improved fraud detection accuracy by 30% using Kafka.</li>
+            <li>Drove 30% revenue growth with AI-powered sales models.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:kvsprasanth007@gmail.com">kvsprasanth007@gmail.com</a></p>
+        <p>Phone: 9375361790</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/venkat-kunchanapalli" target="_blank">linkedin.com/in/venkat-kunchanapalli</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Venkat Sai Prasanth. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
