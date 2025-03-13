@@ -43,6 +43,28 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem 2rem;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #00ffff;
+}
+.logo-image {
+    width: 40px; /* Adjust based on your logo size */
+    height: 40px;
+    object-fit: contain;
+}
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333; /* Adjust color to match your design */
 }
 
 .logo {
@@ -52,8 +74,15 @@ nav {
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Optional: Add hover effects */
+.nav-links a:hover {
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
 .nav-links li {
