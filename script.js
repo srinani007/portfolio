@@ -29,3 +29,8 @@ style.innerHTML = `
     .fade-in { opacity: 1; }
 `;
 document.head.appendChild(style);
+
+// Add loading state
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
