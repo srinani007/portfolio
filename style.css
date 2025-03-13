@@ -25,10 +25,28 @@ body::before {
 }
 
 body.loaded::before {
+
     display: none;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    background: linear-gradient(135deg, rgba(26, 26, 61, 0.8), rgba(10, 10, 35, 0.8)); /* Fallback if hero-bg.jpg fails */
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional parallax effect */
+    position: relative; /* For scroll-indicator positioning */
+    z-index: 1000; /* Ensure header is above other content */
+    animation: fadeIn 2s ease-in-out; /* Fade-in effect for header */
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect to the background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow for better visibility */
     position: fixed;
     top: 0;
     width: 100%;
@@ -38,6 +56,8 @@ header {
 }
 
 nav {
+    position: relative;
+    z-index: 1001; /* Ensure nav is above other content */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,6 +66,12 @@ nav {
 }
 
 .logo {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    background-clip: text;
     font-family: 'Orbitron', sans-serif;
     font-size: 24px;
     color: #00ffff;
@@ -72,6 +98,11 @@ nav {
 }
 
 .section {
+    background: linear-gradient(135deg, rgba(26, 26, 61, 0.8), rgba(10, 10, 35, 0.8)); /* Fallback if hero-bg.jpg fails */
+    background-image: url('section-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional parallax effect */
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -117,6 +148,8 @@ h2 {
 }
 
 .hero-content .animated-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
     font-size: 24px;
     color: #fff;
     overflow: hidden;
@@ -125,6 +158,12 @@ h2 {
     animation: typing 3s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
     background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
     padding: 0 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    animation: fadeIn 2s ease-in-out, typing 3s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .cta-btn {
@@ -136,16 +175,20 @@ h2 {
     border-radius: 5px;
     margin-right: 10px;
     transition: transform 0.3s;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .cta-btn.secondary {
     background: transparent;
     border: 2px solid #00ffff;
     color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    font-weight: 700;
 }
 
 .cta-btn:hover {
     transform: scale(1.05);
+    text-transform: uppercase;
 }
 
 .hero-image img {
@@ -201,20 +244,30 @@ h2 {
     background-image: url('about-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed; /* Optional parallax effect */
     position: relative;
     z-index: 1;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    padding: 80px 20px;
+
 }
 
 #about::before {
     content: '';
+    background-image: url('about-bg.jpg');
+    background-size: cover;
+    background-position: center;
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
     z-index: -1;
+    animation: fadeIn 2ms ease-in-out; /* Fade-in effect for overlay */
 }
 
 #about p {
@@ -224,6 +277,10 @@ h2 {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    animation: fadeInText 1s ease-in-out forwards;
+    text-align: justify;
+    line-height: 1.8;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
 .fade-in-text {
@@ -235,6 +292,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .skill-card, .project-card {
@@ -252,6 +310,11 @@ h2 {
 .timeline {
     position: relative;
     padding-left: 40px;
+    padding: 20px;
+    list-style: none;
+    background: linear-gradient(135deg, rgba(26, 26, 61, 0.8), rgba(10, 10, 35, 0.8)); /* Fallback if hero-bg.jpg fails */
+    background: rgba(0, 0, 0, 0.5);
+    
 }
 
 .timeline-item {
@@ -313,9 +376,12 @@ footer {
         text-align: center;
         height: auto;
         padding: 60px 20px;
+        background-attachment: scroll; /* Disable parallax on mobile */
     }
+
     .hero-content {
         max-width: 100%;
+        margin-bottom: 20px;
     }
     .hero-content .animated-text {
         font-size: 18px;

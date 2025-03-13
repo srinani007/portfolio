@@ -10,8 +10,12 @@
 <body>
     <header>
         <nav>
+            <img src="logo.jpg" alt="Logo" class="logo-img" style="width: 50px; height: 50px;">
+            <button class="menu-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('active');">
+                <span class="menu-icon"></span>
+            </button>
             <div class="logo">VSP</div>
-            <ul class="nav-links">
+            <ul class="nav-links" style="display: flex; justify-content: space-around; list-style: none; padding: 0;">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -30,7 +34,7 @@
             <a href="#contact" class="cta-btn">Get in Touch</a>
             <a href="Venkat_Sai_Prasanth_Resume.pdf" download class="cta-btn secondary">Download Resume</a>
         </div>
-        <div class="hero-image">
+        <div class="hero-image" style="animation: fadeIn 2s;">
             <img src="avatar.jpg" alt="Avatar of Venkat Sai Prasanth">
         </div>
         <div class="scroll-indicator">
@@ -88,6 +92,10 @@
         <h2>Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
+                <h3>Real-time Data Processing System</h3>
+                <p>Implemented with Kafka and Spark, enhancing data throughput by 50% for real-time analytics.</p>
+            </div>
+            <div class="project-card">
                 <h3>AI-Powered Chatbot</h3>
                 <p>Built with Spring Boot and GCP Cloud Functions, integrated with Dialogflow CX for seamless interactions.</p>
             </div>
@@ -104,7 +112,9 @@
 
     <section id="achievements" class="section" style="background-image: url('achievements-bg.jpg');">
         <h2>Achievements</h2>
-        <ul>
+        <ul class="achievements-list" style="animation-delay: 0.2s;">
+            <li>Reduced system downtime by 30% through microservices migration.</li>
+            <li>Improved data processing speed by 50% with real-time systems.</li>
             <li>Reduced data breach risk by 30% with Zero Trust Architecture.</li>
             <li>Improved fraud detection accuracy by 30% using Kafka.</li>
             <li>Drove 30% revenue growth with AI-powered sales models.</li>
