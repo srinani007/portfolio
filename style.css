@@ -315,6 +315,9 @@ h2 {
     background: #00ffff;
     border-radius: 50%;
 }
+.timeline-item.slide-in {
+    animation: slideIn 0.8s ease-out forwards;
+}
 
 footer {
     text-align: center;
@@ -350,6 +353,10 @@ footer {
 @keyframes popIn {
     0% { opacity: 0; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1); }
+}
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
 }
 
 /* Responsive Design */
@@ -393,5 +400,8 @@ footer {
     }
     #skills {
         background-attachment: scroll; /* Disable parallax on mobile */
+    }
+    #experience {
+        background-attachment: scroll;
     }
 }
