@@ -37,6 +37,7 @@ header {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    display: flex;
 }
 
 header::before {
@@ -48,6 +49,9 @@ header::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: -1;
+    position: relative;
+    transition: background-image 0.3s ease-in-out;
+    animation: fadeInText 1s ease-in-out forwards;
 }
 
 nav {
@@ -56,11 +60,28 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    background-position: center; /* Ensure background image is centered */
+    background-size: cover; /* Ensure background image covers the entire header */
+    background-attachment: fixed; /* Ensure background image is fixed during scroll */
+    transition: background-image 0.3s ease-in-out;
 }
 
 .logo-img {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    background: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
 }
 
 .logo {
@@ -77,7 +98,17 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: absolute;
-    left: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .nav-links {
