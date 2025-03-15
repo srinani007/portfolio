@@ -8,22 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <img src="logo.jpg" alt="Logo" class="logo-img">
-            <button class="menu-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('active');">
-                <span class="menu-icon"></span>
-            </button>
-            <div class="logo" >VSP</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="quantum-loader">
+            <div class="quantum-dot"></div>
+            <div class="quantum-dot"></div>
+            <div class="quantum-dot"></div>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline>
+            <source src="video-2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles"></div>
+    <header class="neon-header">
+        <nav class="responsive-nav">
+            <div class="nav-brand">
+                <img src="logo.jpg" alt="Quantum Qube Logo" class="hologram-logo">
+                <span class="gradient-text">VSP</span>
+            </div>
+           
+            <div class="nav-menu">
+                <button class="hamburger" aria-label="Menu">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </button>
+                
+                <ul class="nav-items">
+                    <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
