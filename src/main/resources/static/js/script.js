@@ -60,41 +60,56 @@ window.addEventListener("load", () => {
     document.querySelector(".loader")?.classList.add("hidden");
 });
 
-// Contact form submission with fetch API
-document.getElementById("contact-form")?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const name = e.target.querySelector('input[name="name"]').value.trim();
-    const email = e.target.querySelector('input[name="email"]').value.trim();
-    const message = e.target.querySelector('textarea[name="message"]').value.trim();
+document.getElementById("contact-form").addEventListener("submit", async (event) => {
+    event.preventDefault();  // Prevent default form submission
 
+    // Capture form values
+    const name = event.target.querySelector('input[name="name"]').value.trim();
+    const email = event.target.querySelector('input[name="email"]').value.trim();
+    const message = event.target.querySelector('textarea[name="message"]').value.trim();
+    const responseMessage = document.getElementById("responseMessage");
+
+    // Basic validation
     if (!name || !email || !message) {
         alert("Please fill in all fields.");
         return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Optional: Basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
         alert("Please enter a valid email.");
         return;
     }
 
     try {
+        // Sending POST request to the backend using fetch
         const response = await fetch("http://localhost:8080/api/contact/send", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({ name, email, message }),
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",  // Proper Content-Type for form data
+            },
+            body: new URLSearchParams({
+                name: name,
+                email: email,
+                message: message
+            })
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
+        // Handle response
         const data = await response.text();
-        document.getElementById("responseMessage").innerText = data;
-        e.target.reset();
+        responseMessage.textContent = data;  // Display the success or failure message
+        responseMessage.style.color = response.ok ? "green" : "red";  // Show in green for success, red for failure
+        event.target.reset();  // Reset form fields
+
     } catch (error) {
+        // Handle errors
         console.error("Error:", error);
+        responseMessage.textContent = "An error occurred. Please try again later.";
+        responseMessage.style.color = "red";
     }
 });
+
 
 // Optional: Add particle animation
 function createParticles() {

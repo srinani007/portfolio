@@ -1715,3 +1715,13 @@ footer .social-icons a:hover i {
   background: #00ffff;
   animation: scrollDown 1.5s infinite;
 }
+/* Styles for the response message box */
+.response-box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding:
